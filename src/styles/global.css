@@ -695,11 +695,8 @@ a {
     height: 100px;
   }
 
-  .sticker--custom {
-    top: -125px;
-    left: -74px;
-    width: 90px;
-    height: 90px;
+  .sticker--hidden {
+    display: none;
   }
 }
 @media (max-width: 809.98px) {
@@ -733,7 +730,7 @@ a {
     flex-direction: column;
     align-items: center;
     gap: clamp(56px, 8vh, 64px);
-    padding: 225px 0 96px;
+    padding: 200px 0 96px;
   }
   /* Stickers flank the title without consuming flow width: worst-case
      "DE SOFTWARE" at 11.5vw ≈ 7em ≈ 257px still fits a 320px viewport. */
@@ -778,7 +775,11 @@ a {
     overflow: hidden;
     border-radius: 20px;
   }
-  .hero-mobile-portrait img {
+  .hero-mobile-portrait__image {
+    width: 100%;
+    height: 100%;
+  }
+  .hero-mobile-portrait__image img {
     display: block;
     width: 100%;
     height: 100%;

@@ -137,7 +137,7 @@ export default function Services() {
       {/* Separate refs keep scroll progress and sticker drag bounds from competing. */}
       <div ref={stageRef} className="services__stage">
         <Sticker
-          side="custom"
+          side="hidden"
           // Path bbox: X[862,1046] Y[108,285]. Square 184x184 centered on
           // (954, 196.5) so the shape fills the sticker area without distortion.
           viewBox="862 104 184 184"
