@@ -206,7 +206,7 @@ export default function HeroStage() {
               aria-label="Interactive portrait card"
             >
               <div className="avatar-card__face avatar-card__face--front">
-                <img src={AVATAR_BLACK_URL} alt="Portrait of Majd" />
+                <img src={AVATAR_BLACK_URL} alt="Portrait of Pita" />
               </div>
               <div
                 className="avatar-card__face avatar-card__face--back"
