@@ -10,18 +10,23 @@ export function Sticker({
   enterDelay,
   constraints,
   reduceMotion,
+  draggable = true,
   children,
   viewBox = "0 0 160 160",
 }: {
-  side: "star" | "bolt";
+  side: "star" | "bolt" | "custom" | string;
   enterDelay: number;
   constraints: React.RefObject<HTMLDivElement | null>;
   reduceMotion: boolean | null;
+  draggable?: boolean;
   children: React.ReactNode;
   viewBox?: string;
 }) {
   return (
-    <div className={`sticker sticker--${side}`} aria-hidden="true">
+    <div
+      className={`sticker sticker--${side}  ${side === "custom" ? "sticker--custom" : ""}`}
+      aria-hidden="true"
+    >
       <motion.div
         className="sticker__draggable"
         initial={reduceMotion ? false : { opacity: 0, scale: 0.92 }}
@@ -30,11 +35,11 @@ export function Sticker({
           opacity: { delay: enterDelay, duration: 1.87, ease: EASE },
           scale: { delay: enterDelay, duration: 2.05, ease: EASE },
         }}
-        drag
-        dragConstraints={constraints}
-        dragElastic={0.3}
-        dragMomentum={false}
-        whileDrag={{ cursor: "grabbing", scale: 1.05 }}
+        drag={draggable}
+        dragConstraints={draggable ? constraints : undefined}
+        dragElastic={draggable ? 0.3 : undefined}
+        dragMomentum={draggable ? false : undefined}
+        whileDrag={draggable ? { cursor: "grabbing", scale: 1.05 } : undefined}
       >
         <div className="sticker__rotation">
           <svg viewBox={viewBox} role="presentation">
