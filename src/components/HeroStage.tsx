@@ -5,7 +5,7 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Sticker } from "./Sticker";
 import ArrowLink from "./ArrowLink";
 
@@ -34,7 +34,15 @@ const CARD_START_SCALE = 0.5;
 
 export default function HeroStage() {
   const stageRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const reduceMotion = useReducedMotion();
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 809.98px)");
+    const updateMobile = () => setIsMobile(mediaQuery.matches);
+    updateMobile();
+    mediaQuery.addEventListener("change", updateMobile);
+    return () => mediaQuery.removeEventListener("change", updateMobile);
+  }, []);
   const { scrollYProgress } = useScroll({
     target: stageRef,
     offset: ["start start", "end end"],
@@ -64,6 +72,126 @@ export default function HeroStage() {
   const greetingOpacity = useTransform(scrollYProgress, GREETING_BAND, [0, 1]);
   const greetingY = useTransform(scrollYProgress, GREETING_BAND, [18, 0]);
   const greetingBlur = useTransform(scrollYProgress, GREETING_BAND, [8, 0]);
+
+  if (isMobile) {
+    return (
+      <div ref={stageRef} className="hero-stage hero-stage--mobile">
+        <div className="hero-mobile-flow">
+          <div className="hero-mobile-title-row">
+            <Sticker
+              side="star"
+              enterDelay={0.65}
+              constraints={stageRef}
+              reduceMotion={reduceMotion}
+              draggable={false}
+            >
+              <path
+                d="m80 7 18 47 48-18-27 43 35 35-51-7-13 46-18-46-50 11 34-38-28-41 48 16Z"
+                fill="#111"
+              />
+            </Sticker>
+            <motion.h1
+              id="hero-title"
+              initial={
+                reduceMotion
+                  ? false
+                  : { opacity: 0, y: 18, filter: "blur(8px)" }
+              }
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={titleLine(0)}
+            >
+              <motion.span
+                className="hero-title-line"
+                initial={
+                  reduceMotion
+                    ? false
+                    : { opacity: 0, y: 18, filter: "blur(8px)" }
+                }
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={titleLine(0)}
+              >
+                INGENIERO
+              </motion.span>
+              <motion.span
+                className="hero-title-line"
+                initial={
+                  reduceMotion
+                    ? false
+                    : { opacity: 0, y: 18, filter: "blur(8px)" }
+                }
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                transition={titleLine(0.2)}
+              >
+                DE SOFTWARE
+              </motion.span>
+            </motion.h1>
+            <Sticker
+              side="bolt"
+              enterDelay={0.72}
+              constraints={stageRef}
+              reduceMotion={reduceMotion}
+              draggable={false}
+            >
+              <path d="m91 5-51 79h37l-12 71 55-91H83Z" fill="#111" />
+            </Sticker>
+          </div>
+
+          <motion.div
+            className="hero-mobile-portrait"
+            initial={
+              reduceMotion ? false : { opacity: 0, y: 30, filter: "blur(16px)" }
+            }
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={enter(0.4, 1.8)}
+          >
+            <img src={AVATAR_COLOR_URL} alt="Portrait of Pita" />
+          </motion.div>
+
+          <motion.div
+            className="hero-mobile-meta"
+            aria-label="Portfolio details"
+            initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={enter(0.9, 1.2)}
+          >
+            <span>©2026</span>
+            <span>CREANDO DESDE 2020</span>
+          </motion.div>
+
+          <motion.div
+            className="hero-mobile-bio bio-layer__grid"
+            initial={reduceMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={enter(0.72, 0.94)}
+          >
+            <div className="bio-layer__left">
+              <p id="bio-greeting" className="bio-greeting">
+                Epa!
+              </p>
+              <p className="bio-text" aria-labelledby="bio-greeting">
+                Soy José Alejandro, desarrollador de software, con más de 5 años
+                de experiencia construyendo aplicaciones web escalables y de
+                alto rendimiento.
+              </p>
+            </div>
+            <div className="bio-layer__right bio-text__description">
+              <p>
+                Soy ingeniero de sistemas con una sólida base tanto en frontend
+                como en backend. Desarrollo de interfaces modernas y modulares,
+                construyo soluciones completas de extremo a extremo.
+              </p>
+              <p>
+                A lo largo de mi carrera he desarrollado y optimizado
+                aplicaciones web administrativas, dashboards, y hasta
+                aplicaciones de streaming multiplataforma para Smart TV.
+              </p>
+              <ArrowLink href="#work" />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div ref={stageRef} className="hero-stage">
@@ -160,7 +288,7 @@ export default function HeroStage() {
             <motion.div
               className="avatar-card"
               style={
-                reduceMotion
+                isMobile || reduceMotion
                   ? undefined
                   : {
                       y: cardY,
@@ -171,15 +299,23 @@ export default function HeroStage() {
               }
               aria-label="Interactive portrait card"
             >
-              <div className="avatar-card__face avatar-card__face--front">
-                <img src={AVATAR_BLACK_URL} alt="Portrait of Pita" />
-              </div>
-              <div
-                className="avatar-card__face avatar-card__face--back"
-                aria-hidden="true"
-              >
-                <img src={AVATAR_COLOR_URL} alt="" />
-              </div>
+              {isMobile ? (
+                <div className="avatar-card__face avatar-card__face--mobile">
+                  <img src={AVATAR_COLOR_URL} alt="Portrait of Pita" />
+                </div>
+              ) : (
+                <>
+                  <div className="avatar-card__face avatar-card__face--front">
+                    <img src={AVATAR_BLACK_URL} alt="Portrait of Pita" />
+                  </div>
+                  <div
+                    className="avatar-card__face avatar-card__face--back"
+                    aria-hidden="true"
+                  >
+                    <img src={AVATAR_COLOR_URL} alt="" />
+                  </div>
+                </>
+              )}
             </motion.div>
           </motion.div>
         </motion.div>
@@ -209,9 +345,6 @@ export default function HeroStage() {
                     opacity: { delay: 0.72, duration: 2.16, ease: EASE },
                     y: { delay: 0.72, duration: 1.87, ease: EASE },
                     filter: { delay: 0.72, duration: 1.69, ease: EASE },
-                  }}
-                  style={{
-                    margin: "0 0 100px",
                   }}
                 >
                   Epa!
