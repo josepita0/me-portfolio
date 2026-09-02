@@ -5,7 +5,7 @@ interface Props {
 
 export default function ArrowLink({ href, children = "Palante" }: Props) {
   // Diagonal arrow pointing to the upper-right corner (↗) with a chevron tip.
-  const arrowPath = "M6 14 14 6 M11 9 14 6 9 11";
+  const arrowPath = "M6 14L14 6M14 6H9M14 6V11";
 
   return (
     <a className="arrow-link" href={href} aria-label={`${children} — continue`}>
