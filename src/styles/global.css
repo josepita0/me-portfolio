@@ -337,7 +337,7 @@ a {
   letter-spacing: -0.04em;
 }
 .hero-section {
-  height: 235vh;
+  height: 188vh;
 }
 .hero-stage {
   position: relative;
@@ -639,7 +639,7 @@ a {
 }
 .text-reveal-section {
   position: relative;
-  height: 205vh;
+  height: 164vh;
 }
 .text-reveal {
   position: relative;
@@ -658,7 +658,7 @@ a {
   margin: 0;
   color: var(--ink);
   font:
-    500 clamp(1.75rem, 4.5vw, 3rem)/1.18 "Inter",
+    500 clamp(1.75rem, 4.5vw, 2.5rem)/1.18 "Inter",
     sans-serif;
   letter-spacing: -0.015em;
   text-align: center;
@@ -707,7 +707,7 @@ a {
     min-height: 45vh;
   }
   .hero-section {
-    min-height: 235vh;
+    min-height: 188vh;
   }
   .hero-headline-wrap h1 {
     font-size: clamp(64px, 16vw, 110px);
