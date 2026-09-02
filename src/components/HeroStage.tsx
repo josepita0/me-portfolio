@@ -139,12 +139,29 @@ export default function HeroStage() {
           <motion.div
             className="hero-mobile-portrait"
             initial={
-              reduceMotion ? false : { opacity: 0, y: 30, filter: "blur(16px)" }
+              reduceMotion
+                ? false
+                : { clipPath: "inset(100% 0% 0% 0%)" }
             }
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={enter(0.4, 1.8)}
+            animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
+            transition={{ delay: 0.4, duration: 2.43, ease: EASE }}
           >
-            <img src={AVATAR_COLOR_URL} alt="Portrait of Pita" />
+            <motion.div
+              className="hero-mobile-portrait__image"
+              initial={
+                reduceMotion
+                  ? false
+                  : { opacity: 0, y: 30, filter: "blur(16px)" }
+              }
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{
+                opacity: { delay: 0.4, duration: 2.16, ease: EASE },
+                y: { delay: 0.4, duration: 2.25, ease: EASE },
+                filter: { delay: 0.4, duration: 1.87, ease: EASE },
+              }}
+            >
+              <img src={AVATAR_COLOR_URL} alt="Portrait of Pita" />
+            </motion.div>
           </motion.div>
 
           <motion.div
