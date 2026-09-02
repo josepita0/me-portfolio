@@ -5,7 +5,8 @@ import {
   useScroll,
   useTransform,
 } from "motion/react";
-import React, { useRef } from "react";
+import { useRef } from "react";
+import { Sticker } from "./Sticker";
 import ArrowLink from "./ArrowLink";
 
 const AVATAR_BLACK_URL = "/images/avatar_black.webp";
@@ -30,47 +31,6 @@ const BIO_ENTRY_BAND = [0.5, 1] as const;
 // Resting hero state: card sits low (corner-label row) at half size, grows to full as the morph runs.
 const CARD_START_Y = "30vh";
 const CARD_START_SCALE = 0.5;
-
-function Sticker({
-  side,
-  enterDelay,
-  constraints,
-  reduceMotion,
-  children,
-  viewBox = "0 0 160 160",
-}: {
-  side: "star" | "bolt";
-  enterDelay: number;
-  constraints: React.RefObject<HTMLDivElement | null>;
-  reduceMotion: boolean;
-  children: React.ReactNode;
-  viewBox?: string;
-}) {
-  return (
-    <div className={`hero-sticker hero-sticker--${side}`} aria-hidden="true">
-      <motion.div
-        className="hero-sticker__draggable"
-        initial={reduceMotion ? false : { opacity: 0, scale: 0.92 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          opacity: { delay: enterDelay, duration: 1.87, ease: EASE },
-          scale: { delay: enterDelay, duration: 2.05, ease: EASE },
-        }}
-        drag
-        dragConstraints={constraints}
-        dragElastic={0.3}
-        dragMomentum={false}
-        whileDrag={{ cursor: "grabbing", scale: 1.05 }}
-      >
-        <div className="hero-sticker__rotation">
-          <svg viewBox={viewBox} role="presentation">
-            {children}
-          </svg>
-        </div>
-      </motion.div>
-    </div>
-  );
-}
 
 export default function HeroStage() {
   const stageRef = useRef<HTMLDivElement>(null);

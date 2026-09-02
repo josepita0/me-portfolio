@@ -441,41 +441,41 @@ a {
 .avatar-card__face--back {
   transform: rotateY(180deg);
 }
-.hero-sticker {
+.sticker {
   position: absolute;
   z-index: 4;
   cursor: grab;
   touch-action: none;
   pointer-events: auto;
 }
-.hero-sticker__draggable {
+.sticker__draggable {
   width: 100%;
   height: 100%;
   cursor: grab;
   touch-action: none;
 }
-.hero-sticker svg {
+.sticker svg {
   display: block;
   width: 100%;
   height: 100%;
 }
-.hero-sticker__rotation {
+.sticker__rotation {
   width: 100%;
   height: 100%;
 }
-.hero-sticker--star {
+.sticker--star {
   top: -56px;
   left: -74px;
   width: 120px;
   height: 120px;
 }
-.hero-sticker--bolt {
+.sticker--bolt {
   top: 52%;
   right: -94px;
   width: 125px;
   height: 125px;
 }
-.hero-sticker--bolt .hero-sticker__rotation {
+.sticker--bolt .sticker__rotation {
   transform: rotate(16deg);
 }
 .bio-layer {
@@ -675,13 +675,13 @@ a {
   .bio-layer__center {
     width: 220px;
   }
-  .hero-sticker--star {
+  .sticker--star {
     top: -42px;
     left: -58px;
     width: 90px;
     height: 90px;
   }
-  .hero-sticker--bolt {
+  .sticker--bolt {
     right: -70px;
     width: 100px;
     height: 100px;
@@ -726,13 +726,13 @@ a {
     font-size: clamp(16px, 3.2vw, 26px) !important;
   }
 
-  .hero-sticker--star {
+  .sticker--star {
     top: -28px;
     left: -34px;
     width: 60px;
     height: 60px;
   }
-  .hero-sticker--bolt {
+  .sticker--bolt {
     right: -40px;
     width: 72px;
     height: 72px;
@@ -830,5 +830,75 @@ a {
   .text-reveal__sticky {
     position: relative;
     height: auto;
+  }
+}
+
+.services-section {
+  position: relative;
+  width: min(var(--content-max), calc(100% - 60px));
+  margin: 0 auto;
+  padding: clamp(7rem, 16vw, 9rem) 0 clamp(8rem, 18vw, 16rem);
+}
+.services {
+  width: 100%;
+}
+.services__title {
+  margin: 0 0 clamp(4rem, 6vw, 8rem);
+  color: var(--ink);
+  font:
+    700 clamp(4rem, 12vw, 4.875rem)/0.86 "Archivo",
+    sans-serif;
+  letter-spacing: -0.05em;
+}
+.services__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.services__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+  gap: clamp(2rem, 8vw, 10rem);
+  align-items: baseline;
+  padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+  border-top: 1px solid var(--ink-50);
+  will-change: transform, opacity, filter;
+}
+.services__row:last-child {
+  border-bottom: 1px solid var(--ink-50);
+}
+.services__row h3 {
+  margin: 0;
+  color: var(--ink);
+  font:
+    500 clamp(1.35rem, 2.8vw, 2rem)/1.05 "Archivo",
+    sans-serif;
+  letter-spacing: -0.04em;
+}
+.services__row p {
+  margin: 0;
+  color: var(--ink-50);
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.35;
+}
+
+@media (max-width: 809.98px) {
+  .services-section {
+    width: min(330px, calc(100% - 40px));
+    padding: 6rem 0 8rem;
+  }
+  .services__title {
+    margin-bottom: 4rem;
+    font-size: clamp(4rem, 18vw, 7rem);
+  }
+  .services__row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services__row {
+    will-change: auto;
   }
 }
