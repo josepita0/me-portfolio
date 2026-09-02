@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import TextRevealSection from '../components/TextRevealSection.astro';
+---
+
+<BaseLayout
+  title="Majd — Software Engineer"
+  description="A software engineer creating thoughtful digital experiences."
+>
+  <HeroSection />
+  <TextRevealSection />
+  <section id="work" class="placeholder-section" aria-labelledby="work-placeholder-title">
+    <h2 id="work-placeholder-title">Selected work will live here.</h2>
+  </section>
+  <section id="thoughts" class="placeholder-section" aria-labelledby="thoughts-placeholder-title">
+    <h2 id="thoughts-placeholder-title">Thoughts will live here.</h2>
+  </section>
+  <section id="contact" class="placeholder-section" aria-labelledby="contact-placeholder-title">
+    <h2 id="contact-placeholder-title">Let’s talk.</h2>
+  </section>
+</BaseLayout>
