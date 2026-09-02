@@ -251,9 +251,9 @@ export default function HeroStage() {
                   Epa!
                 </motion.p>
                 <p className="bio-text" aria-labelledby="bio-greeting">
-                  Soy José Alejandro, desarrollador full stack basado en Elda,
-                  España, con más de 5 años de experiencia construyendo
-                  aplicaciones web escalables y de alto rendimiento.
+                  Soy José Alejandro, desarrollador de software, con más de 5
+                  años de experiencia construyendo aplicaciones web escalables y
+                  de alto rendimiento.
                 </p>
               </div>
               <div className="bio-layer__center" aria-hidden="true" />
@@ -261,14 +261,13 @@ export default function HeroStage() {
                 <p>
                   Soy ingeniero de sistemas con una sólida base tanto en
                   frontend como en backend. Desarrollo de interfaces modernas y
-                  modulares, construir soluciones completas de extremo a
+                  modulares, construyo soluciones completas de extremo a
                   extremo.
                 </p>
                 <p>
                   A lo largo de mi carrera he desarrollado y optimizado
-                  aplicaciones web administrativas, dashboards conectados a
-                  servicios backend, y hasta aplicaciones de streaming
-                  multiplataforma para Smart TV.
+                  aplicaciones web administrativas, dashboards, y hasta
+                  aplicaciones de streaming multiplataforma para Smart TV.
                 </p>
 
                 <ArrowLink href="#work" />
