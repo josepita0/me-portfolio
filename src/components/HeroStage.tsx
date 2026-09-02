@@ -1,4 +1,5 @@
 import {
+  easeInOut,
   motion,
   useReducedMotion,
   useScroll,
@@ -24,7 +25,7 @@ const titleLine = (delay: number) => ({
   filter: { delay, duration: 1.69, ease: EASE },
 });
 const HERO_EXIT_BAND = [0, 0.55] as const;
-const CARD_ROTATION_BAND = [0.2, 0.8] as const;
+const CARD_ROTATION_BAND = [0.15, 0.85] as const;
 const BIO_ENTRY_BAND = [0.5, 1] as const;
 // Resting hero state: card sits low (corner-label row) at half size, grows to full as the morph runs.
 const CARD_START_Y = "30vh";
@@ -83,15 +84,20 @@ export default function HeroStage() {
     scrollYProgress,
     CARD_ROTATION_BAND,
     [0, 180],
+    { ease: easeInOut },
   );
-  const cardY = useTransform(scrollYProgress, CARD_ROTATION_BAND, [
-    CARD_START_Y,
-    "0vh",
-  ]);
-  const cardScale = useTransform(scrollYProgress, CARD_ROTATION_BAND, [
-    CARD_START_SCALE,
-    1,
-  ]);
+  const cardY = useTransform(
+    scrollYProgress,
+    CARD_ROTATION_BAND,
+    [CARD_START_Y, "0vh"],
+    { ease: easeInOut },
+  );
+  const cardScale = useTransform(
+    scrollYProgress,
+    CARD_ROTATION_BAND,
+    [CARD_START_SCALE, 1],
+    { ease: easeInOut },
+  );
   const bioY = useTransform(scrollYProgress, BIO_ENTRY_BAND, ["90vh", "0vh"]);
   // Greeting "Hey!" — scroll-driven entrance synced with bio layer appearance.
   const GREETING_BAND = [0.65, 0.85] as const;
