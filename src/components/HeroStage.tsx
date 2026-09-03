@@ -185,9 +185,9 @@ export default function HeroStage() {
                 Epa!
               </p>
               <p className="bio-text" aria-labelledby="bio-greeting">
-                Soy José Alejandro, desarrollador de software, con más de 5 años
-                de experiencia construyendo aplicaciones web escalables y de
-                alto rendimiento.
+                Soy José Pita, desarrollador de software, con más de 5 años de
+                experiencia construyendo aplicaciones web escalables y de alto
+                rendimiento.
               </p>
             </div>
             <div className="bio-layer__right bio-text__description">
@@ -367,9 +367,9 @@ export default function HeroStage() {
                   Epa!
                 </motion.p>
                 <p className="bio-text" aria-labelledby="bio-greeting">
-                  Soy José Alejandro, desarrollador de software, con más de 5
-                  años de experiencia construyendo aplicaciones web escalables y
-                  de alto rendimiento.
+                  Soy José Pita, desarrollador de software, con más de 5 años de
+                  experiencia construyendo aplicaciones web escalables y de alto
+                  rendimiento.
                 </p>
               </div>
               <div className="bio-layer__center" aria-hidden="true" />
