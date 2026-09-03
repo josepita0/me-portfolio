@@ -44,7 +44,7 @@ const projects = [
   },
   {
     name: "Colorato Industria",
-    description: "Calculadora en tiempo real para industria de oxido y carateo",
+    description: "Calculadora en tiempo real para industria de óxido y carateo",
     tags: "Astro · Landing page · Calculadora",
     image: "/projects/project_3.webp",
     link: "https://coloratoindustria.com",
@@ -92,7 +92,7 @@ export default function Projects() {
               className="projects__card-image"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`View ${project.name} project`}
+              aria-label={`Ver proyecto ${project.name}`}
             >
               <img
                 src={project.image}

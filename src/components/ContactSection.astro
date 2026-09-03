@@ -63,14 +63,14 @@ import SubmitButtonController from "./SubmitButtonController";
             id="contact-project"
             name="project"
             rows="5"
-            placeholder="Dime sobre tu proyecto..."
+            placeholder="Cuéntame sobre tu proyecto..."
             required
           ></textarea>
         </div>
         <div class="contact-section__legal-notice">
           <p>
             Tus datos serán tratados por José Pita con la finalidad de responder tu consulta.
-            Podés ejercer tus derechos de acceso, rectificación, cancelación y oposición en contacto@tudominio.com.
+             Puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición en contacto@tudominio.com.
             <a href="/privacidad" class="contact-section__legal-link">Más información</a>
           </p>
         </div>
@@ -89,8 +89,8 @@ import SubmitButtonController from "./SubmitButtonController";
           </label>
         </div>
         <input type="hidden" name="access_key" value="396eb97c-4dd0-41e1-9cf3-0a084fbe0c26" />
-        <input type="hidden" name="subject" value="New contact from portfolio" />
-        <input type="hidden" name="from_name" value="Portfolio Contact Form" />
+        <input type="hidden" name="subject" value="Nuevo contacto desde el portafolio" />
+        <input type="hidden" name="from_name" value="Formulario de contacto del portafolio" />
         <input type="hidden" name="policy_version" value="1.0" />
         <SubmitButtonController client:load />
         <div class="contact-section__feedback" role="status" aria-live="polite"></div>
@@ -156,7 +156,7 @@ import SubmitButtonController from "./SubmitButtonController";
         dispatchStatus("error");
         showFeedback(
           feedback,
-          "Debés aceptar la política de privacidad",
+           "Debes aceptar la política de privacidad",
           "error"
         );
         setTimeout(() => clearFeedback(feedback), 5000);
@@ -199,7 +199,7 @@ import SubmitButtonController from "./SubmitButtonController";
         dispatchStatus("error");
         showFeedback(
           feedback,
-          "Hubo un error. Por favor, intent\u00e1 de nuevo.",
+           "Hubo un error. Por favor, intenta de nuevo.",
           "error",
         );
       }
