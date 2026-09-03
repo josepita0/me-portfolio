@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import Analytics from '@vercel/analytics/astro';
 import NavMenu from '../components/NavMenu';
 import '../styles/global.css';
 
@@ -71,6 +72,7 @@ const ogImageUrl = new URL('/images/avatar_color.webp', siteUrl).href;
     })} />
 
     <ClientRouter />
+    <Analytics />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Saltar al contenido</a>
