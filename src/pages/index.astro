@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/HeroSection.astro';
 import TextRevealSection from '../components/TextRevealSection.astro';
 import ServicesSection from '../components/ServicesSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
@@ -18,7 +20,6 @@ import ServicesSection from '../components/ServicesSection.astro';
   <section id="thoughts" class="placeholder-section" aria-labelledby="thoughts-placeholder-title">
     <h2 id="thoughts-placeholder-title">Thoughts will live here.</h2>
   </section>
-  <section id="contact" class="placeholder-section" aria-labelledby="contact-placeholder-title">
-    <h2 id="contact-placeholder-title">Let’s talk.</h2>
-  </section>
+  <ContactSection />
+  <Footer />
 </BaseLayout>
