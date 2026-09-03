@@ -139,9 +139,7 @@ export default function HeroStage() {
           <motion.div
             className="hero-mobile-portrait"
             initial={
-              reduceMotion
-                ? false
-                : { clipPath: "inset(100% 0% 0% 0%)" }
+              reduceMotion ? false : { clipPath: "inset(100% 0% 0% 0%)" }
             }
             animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
             transition={{ delay: 0.4, duration: 2.43, ease: EASE }}
@@ -177,6 +175,7 @@ export default function HeroStage() {
 
           <motion.div
             className="hero-mobile-bio bio-layer__grid"
+            data-bio-target="true"
             initial={reduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={enter(0.72, 0.94)}
@@ -339,6 +338,7 @@ export default function HeroStage() {
 
         <motion.div
           className="bio-layer"
+          data-bio-target="true"
           style={reduceMotion ? undefined : { y: bioY }}
         >
           <motion.div

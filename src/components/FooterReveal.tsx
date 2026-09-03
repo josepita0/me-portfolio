@@ -1,10 +1,11 @@
 import React, { useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "motion/react";
+import { scrollToTarget } from "../lib/lenis";
 import RollingText from "./RollingText";
 
 const quickLinks = [
   { label: "Inicio", href: "#hero-section" },
-  { label: "Sobre mí", href: "#bio" },
+  { label: "Sobre mí", href: "[data-bio-target]" },
   { label: "Servicios", href: "#services" },
   { label: "Proyectos", href: "#work" },
   { label: "Contacto", href: "#contact" },
@@ -55,6 +56,10 @@ export default function FooterReveal() {
                 key={link.label}
                 href={link.href}
                 className="footer__pill"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToTarget(link.href);
+                }}
                 onMouseEnter={() => setActiveIndex(index)}
                 onMouseLeave={() => setActiveIndex(null)}
                 initial={reduceMotion ? false : { opacity: 0, y: 12 }}

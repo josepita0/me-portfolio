@@ -6,10 +6,11 @@ import {
 } from "motion/react";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
+import { scrollToTarget } from "../lib/lenis";
 import RollingText from "./RollingText";
 
 const links = [
-  { label: "Sobre mí", href: "#hero-section" },
+  { label: "Sobre mí", href: "[data-bio-target]" },
   { label: "Servicios", href: "#services" },
   { label: "Proyectos", href: "#work" },
   { label: "Contacto", href: "#contact" },
@@ -70,6 +71,10 @@ export default function NavMenu() {
             className="nav-menu__logo"
             href="#hero-section"
             aria-label="Pita home"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToTarget("#hero-section");
+            }}
           >
             Pita
           </a>
@@ -158,7 +163,11 @@ export default function NavMenu() {
                       <a
                         ref={index === 0 ? firstLinkRef : undefined}
                         href={link.href}
-                        onClick={() => setIsOpen(false)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setIsOpen(false);
+                          scrollToTarget(link.href);
+                        }}
                         onMouseEnter={() => setActiveIndex(index)}
                         onMouseLeave={() => setActiveIndex(null)}
                         onFocus={() => setActiveIndex(index)}
