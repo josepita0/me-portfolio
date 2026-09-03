@@ -4,6 +4,7 @@ import HeroSection from '../components/HeroSection.astro';
 import TextRevealSection from '../components/TextRevealSection.astro';
 import ServicesSection from '../components/ServicesSection.astro';
 import ContactSection from '../components/ContactSection.astro';
+import ProjectsSection from '../components/ProjectsSection.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -14,12 +15,10 @@ import Footer from '../components/Footer.astro';
   <HeroSection />
   <TextRevealSection />
   <ServicesSection />
-  <section id="work" class="placeholder-section" aria-labelledby="work-placeholder-title">
-    <h2 id="work-placeholder-title">Selected work will live here.</h2>
-  </section>
-  <section id="thoughts" class="placeholder-section" aria-labelledby="thoughts-placeholder-title">
+  <ProjectsSection />
+  <!-- <section id="thoughts" class="placeholder-section" aria-labelledby="thoughts-placeholder-title">
     <h2 id="thoughts-placeholder-title">Thoughts will live here.</h2>
-  </section>
+  </section> -->
   <ContactSection />
   <Footer />
 </BaseLayout>
