@@ -158,7 +158,14 @@ export default function HeroStage() {
                 filter: { delay: 0.4, duration: 1.87, ease: EASE },
               }}
             >
-              <img src={AVATAR_COLOR_URL} alt="Portrait of Pita" />
+              <img
+                src={AVATAR_COLOR_URL}
+                alt="Portrait of Pita"
+                width={400}
+                height={456}
+                fetchPriority="high"
+                decoding="async"
+              />
             </motion.div>
           </motion.div>
 
@@ -317,18 +324,39 @@ export default function HeroStage() {
             >
               {isMobile ? (
                 <div className="avatar-card__face avatar-card__face--mobile">
-                  <img src={AVATAR_COLOR_URL} alt="Portrait of Pita" />
+                  <img
+                    src={AVATAR_COLOR_URL}
+                    alt="Portrait of Pita"
+                    width={400}
+                    height={456}
+                    fetchPriority="high"
+                    decoding="async"
+                  />
                 </div>
               ) : (
                 <>
                   <div className="avatar-card__face avatar-card__face--front">
-                    <img src={AVATAR_BLACK_URL} alt="Portrait of Pita" />
+                    <img
+                      src={AVATAR_BLACK_URL}
+                      alt="Portrait of Pita"
+                      width={400}
+                      height={456}
+                      fetchPriority="high"
+                      decoding="async"
+                    />
                   </div>
                   <div
                     className="avatar-card__face avatar-card__face--back"
                     aria-hidden="true"
                   >
-                    <img src={AVATAR_COLOR_URL} alt="" />
+                    <img
+                      src={AVATAR_COLOR_URL}
+                      alt=""
+                      width={400}
+                      height={456}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 </>
               )}

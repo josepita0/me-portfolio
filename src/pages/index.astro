@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SmoothScroll from '../components/SmoothScroll';
 import HeroSection from '../components/HeroSection.astro';
 import TextRevealSection from '../components/TextRevealSection.astro';
 import ServicesSection from '../components/ServicesSection.astro';
@@ -12,6 +13,7 @@ import Footer from '../components/Footer.astro';
   title="Pita — Software Engineer"
   description="A software engineer creating thoughtful digital experiences."
 >
+  <SmoothScroll client:load />
   <HeroSection />
   <TextRevealSection />
   <ServicesSection />

@@ -97,6 +97,10 @@ export default function Projects() {
               <img
                 src={project.image}
                 alt={project.name}
+                width={800}
+                height={540}
+                loading="lazy"
+                decoding="async"
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
                   const parent = e.currentTarget.parentElement;
