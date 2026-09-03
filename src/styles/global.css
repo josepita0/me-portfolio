@@ -1,71 +1,62 @@
 @font-face {
   font-family: "Archivo";
-  src: url("https://cdn.fontshare.com/wf/HDCJIGGT2U6DURV6536JGTM6VWUIKBSN/ALDOEF2ZUO2T3XAAXI44RMXEPAEQ4BP2/VYFZGEBESZ2HUTOKHQIILYMFZUUHJZ56.woff2")
-    format("woff2");
+  src: url("/fonts/archivo-300.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Archivo";
-  src: url("https://cdn.fontshare.com/wf/YSKLU24545WP65XCD7ZVOFPD6AKR3JSM/SPF276V6UKGPA6W5ZNFTEWBJXRSQNXCR/7BTLO3ZVFMNDGT63YATXTEALTKTYZUZG.woff2")
-    format("woff2");
+  src: url("/fonts/archivo-400.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Archivo";
-  src: url("https://cdn.fontshare.com/wf/5ISYWGR43XD57J2U5VEYATNUZO57OCPH/UIED7ZBTCD42AJ7GJT5NWKWHCOVDRNAP/EPHSF4UBJRLGUILEFJVCMY7ET4W5HPUF.woff2")
-    format("woff2");
+  src: url("/fonts/archivo-500.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Archivo";
-  src: url("https://cdn.fontshare.com/wf/F5RLVZAAIFTTOUZCAGXSRHZGXKIH5EXB/IU4JRATO5NXUAJNVPECD46XUNDJVGCZY/HI3GXDQAABUJ5YHSPOI3V5JTNTJ4PCRR.woff2")
-    format("woff2");
+  src: url("/fonts/archivo-600.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Archivo";
-  src: url("https://cdn.fontshare.com/wf/RJX4LSNI55LNZ6QWGQALARVRCFUYJDBE/HQPW4MP6HXPYZKXF6CFWGJ6ZOJBHKM3X/UHPKREF72UMVMQSKHPDQ42AVOZPICLOJ.woff2")
-    format("woff2");
+  src: url("/fonts/archivo-700.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Archivo";
-  src: url("https://cdn.fontshare.com/wf/NHFJ26T6QCAZJJ2C5FR5LXO3RB43FJWL/L4QQWE6DLDRGG2DZLUPJBOEHMFWATK6B/365ENB5SRQOXDZEVNAEMZN5IJNZBEFIP.woff2")
-    format("woff2");
+  src: url("/fonts/archivo-800.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Archivo";
-  src: url("https://cdn.fontshare.com/wf/Y42A6OBFKHMPOGSSWNFHV6ASZ7RM3IXN/JID5YS2RALYHLX7OX7ELWBV5EF3C3ZQS/4QOBYYT6LF33KRDEW47UQ3DFAEWGYHD4.woff2")
-    format("woff2");
+  src: url("/fonts/archivo-900.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Inter";
-  src: url("https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2")
-    format("woff2");
+  src: url("/fonts/inter-400-900.woff2") format("woff2");
   font-weight: 400 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Clash Grotesk";
-  src: url("https://cdn.fontshare.com/wf/O462VY6O6FTQCS72XVMTQHXAM4NN5CY3/TWF57ITZORMJ3MEWLQQIVO6BMXIB6FUR/MJQFMMOTEGNXDVM7HBBDTQHTVB2M7Y6G.woff2")
-    format("woff2");
+  src: url("/fonts/clash-grotesk-400.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -124,8 +115,7 @@ a {
   z-index: 10;
   pointer-events: none;
   opacity: 0.04;
-  background: url("https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png")
-    repeat;
+  background: url("/images/grain.png") repeat;
   background-size: var(--grain-size);
 }
 .skip-link {
@@ -933,7 +923,6 @@ a {
   align-items: baseline;
   padding: clamp(1.5rem, 3vw, 2.5rem) 0;
   border-top: 1px solid var(--ink-50);
-  will-change: transform, opacity, filter;
 }
 .services__row:last-child {
   border-bottom: 1px solid var(--ink-50);
@@ -975,7 +964,7 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   .services__row {
-    will-change: auto;
+    /* will-change removed - browser handles composition automatically */
   }
 }
 
