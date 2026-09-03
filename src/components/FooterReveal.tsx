@@ -83,8 +83,8 @@ export default function FooterReveal() {
 
         <div className="footer__contact">
           <h3>/Contacto</h3>
-          <a href="mailto:Joseacureropita0@gmail.com" className="footer__email">
-            Joseacureropita0@gmail.com
+          <a href="mailto:contacto@pitass.com" className="footer__email">
+            contacto@pitass.com
           </a>
         </div>
       </motion.div>
