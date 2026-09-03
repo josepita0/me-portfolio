@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import React from 'react';
 import Lenis from 'lenis';
+import { setLenisInstance } from '../lib/lenis';
 
 export default function SmoothScroll() {
   useEffect(() => {
@@ -19,6 +20,8 @@ export default function SmoothScroll() {
       respectReducedMotion: true,
       autoRaf: false,
     });
+
+    setLenisInstance(lenis);
     let frame = 0;
 
     const raf = (time: number) => {
@@ -32,6 +35,7 @@ export default function SmoothScroll() {
     return () => {
       window.cancelAnimationFrame(frame);
       lenis.destroy();
+      setLenisInstance(null);
       document.documentElement.classList.remove('lenis', 'lenis-smooth');
     };
   }, []);
