@@ -9,10 +9,10 @@ import { useEffect, useRef, useState } from "react";
 import RollingText from "./RollingText";
 
 const links = [
-  { label: "About Me", href: "#hero-section" },
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "Sobre mí", href: "#hero-section" },
+  { label: "Servicios", href: "#services" },
+  { label: "Proyectos", href: "#work" },
+  { label: "Contacto", href: "#contact" },
 ];
 
 export default function NavMenu() {

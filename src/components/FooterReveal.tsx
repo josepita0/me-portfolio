@@ -3,11 +3,11 @@ import { motion, useInView, useReducedMotion } from "motion/react";
 import RollingText from "./RollingText";
 
 const quickLinks = [
-  { label: "Home", href: "#hero-section" },
-  { label: "About Me", href: "#bio" },
-  { label: "Services", href: "#services" },
-  { label: "Works", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "Inicio", href: "#hero-section" },
+  { label: "Sobre mí", href: "#bio" },
+  { label: "Servicios", href: "#services" },
+  { label: "Proyectos", href: "#work" },
+  { label: "Contacto", href: "#contact" },
 ];
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -48,7 +48,7 @@ export default function FooterReveal() {
         </div>
 
         <div className="footer__links">
-          <h3>/Accesos rapidos</h3>
+          <h3>/Accesos rápidos</h3>
           <div className="footer__pills">
             {quickLinks.map((link, index) => (
               <motion.a
