@@ -1,6 +1,5 @@
 ---
 import { ClientRouter } from 'astro:transitions';
-import SmoothScroll from '../components/SmoothScroll';
 import NavMenu from '../components/NavMenu';
 import '../styles/global.css';
 
@@ -10,25 +9,72 @@ interface Props {
 }
 
 const {
-  title = 'Pita — Software Engineer',
-  description = 'A software engineer creating thoughtful digital experiences.',
+  title = 'Pita — Ingeniero de Software',
+  description = 'Desarrollo full stack: Angular, React, Node.js. De la idea al producto en producción.',
 } = Astro.props;
+
+const siteUrl = 'https://pitadev.com';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = new URL('/images/avatar_color.webp', siteUrl).href;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Pita — Portfolio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Theme & Icons -->
+    <meta name="theme-color" content="#faf7f3" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/images/avatar_color.webp" />
+
+    <!-- Preconnect for external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "José Pita",
+      "url": canonicalUrl,
+      "image": ogImageUrl,
+      "jobTitle": "Software Engineer",
+      "description": description,
+      "sameAs": [
+        "https://www.linkedin.com/in/jose-acurero/",
+        "https://github.com/josepita0"
+      ],
+      "knowsAbout": ["Angular", "React", "Node.js", "NestJS", "Full Stack Development"]
+    })} />
+
     <ClientRouter />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="grain-overlay" aria-hidden="true"></div>
-    <SmoothScroll client:load />
     <NavMenu client:load />
     <main id="main-content">
       <slot />
