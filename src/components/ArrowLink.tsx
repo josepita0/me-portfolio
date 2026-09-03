@@ -17,7 +17,7 @@ export default function ArrowLink({ href, children = "Palante" }: Props) {
         e.preventDefault();
         scrollToTarget(href);
       }}
-      aria-label={`${children} — continue`}
+      aria-label={`${children} — continuar`}
     >
       <span className="arrow-link__label">{children}</span>
       <span className="arrow-link__icon" aria-hidden="true">

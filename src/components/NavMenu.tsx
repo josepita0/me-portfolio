@@ -85,7 +85,7 @@ export default function NavMenu() {
             aria-expanded={isOpen}
             aria-controls="primary-navigation"
             aria-label={
-              isOpen ? "Close navigation menu" : "Open navigation menu"
+              isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"
             }
             onClick={() => setIsOpen((open) => !open)}
           >
@@ -136,7 +136,7 @@ export default function NavMenu() {
               exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
               transition={transition}
             >
-              <nav aria-label="Primary navigation">
+              <nav aria-label="Navegación principal">
                 <ul className="nav-menu__links">
                   {links.map((link, index) => (
                     <motion.li

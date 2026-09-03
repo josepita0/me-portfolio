@@ -160,7 +160,7 @@ export default function HeroStage() {
             >
               <img
                 src={AVATAR_COLOR_URL}
-                alt="Portrait of Pita"
+                alt="Retrato de Pita"
                 width={400}
                 height={456}
                 fetchPriority="high"
@@ -171,7 +171,7 @@ export default function HeroStage() {
 
           <motion.div
             className="hero-mobile-meta"
-            aria-label="Portfolio details"
+            aria-label="Detalles del portafolio"
             initial={reduceMotion ? false : { opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={enter(0.9, 1.2)}
@@ -273,7 +273,7 @@ export default function HeroStage() {
             </div>
             <motion.div
               className="hero-corners"
-              aria-label="Portfolio details"
+              aria-label="Detalles del portafolio"
               initial={reduceMotion ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -320,13 +320,13 @@ export default function HeroStage() {
                       transformPerspective: 1200,
                     }
               }
-              aria-label="Interactive portrait card"
+              aria-label="Tarjeta de retrato interactiva"
             >
               {isMobile ? (
                 <div className="avatar-card__face avatar-card__face--mobile">
                   <img
                     src={AVATAR_COLOR_URL}
-                    alt="Portrait of Pita"
+                    alt="Retrato de Pita"
                     width={400}
                     height={456}
                     fetchPriority="high"
@@ -338,7 +338,7 @@ export default function HeroStage() {
                   <div className="avatar-card__face avatar-card__face--front">
                     <img
                       src={AVATAR_BLACK_URL}
-                      alt="Portrait of Pita"
+                      alt="Retrato de Pita"
                       width={400}
                       height={456}
                       fetchPriority="high"
