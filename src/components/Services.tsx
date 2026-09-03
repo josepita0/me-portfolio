@@ -8,6 +8,7 @@ import {
   useTransform,
 } from "motion/react";
 import { Sticker } from "./Sticker";
+import AnimatedText from "./AnimatedText";
 
 // Title bands live in the LATE window of the approach. History: late start
 // (+30% delay pass), then stretched ~25% anchored at the end (0.97) so the
@@ -95,7 +96,9 @@ function ServiceRow({
       }}
     >
       <h3>{name}</h3>
-      <p>{tags}</p>
+
+      <AnimatedText client:load text={tags} delay={0.3} />
+      {/* <p>{tags}</p> */}
     </motion.li>
   );
 }
