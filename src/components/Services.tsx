@@ -34,24 +34,24 @@ const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const services = [
   {
-    name: "Desarrollo Full Stack",
-    tags: "Angular · React · Node.js · NestJS",
+    name: "Creación de tu Página Web o Aplicación",
+    tags: "De cero a producción · Diseño y funcionalidad · Listo para usar",
   },
   {
-    name: "Desarrollo Frontend",
-    tags: "UI/UX · Diseño Responsive · Componentes Reutilizables",
-  },
-  // {
-  //   name: "Integración de APIs",
-  //   tags: "REST APIs · WebSockets · Tiempo Real",
-  // },
-  {
-    name: "Optimización y Mantenimiento",
-    tags: "Rendimiento · Refactorización · Escalabilidad",
+    name: "Diseño de Interfaces Atractivas y Fáciles de Usar",
+    tags: "Se ve bien · Es fácil de navegar · Funciona en móvil y computador",
   },
   {
-    name: "Consultoría Técnica",
-    tags: "Arquitectura · Buenas Prácticas · Code Review",
+    name: "Conexión de tu Web con Otros Sistemas",
+    tags: "Pagos · Bases de datos · Notificaciones en tiempo real",
+  },
+  {
+    name: "Mejora de Velocidad y Rendimiento",
+    tags: "Carga más rápido · Menos errores · Mejor experiencia para tus usuarios",
+  },
+  {
+    name: "Asesoría para tu Proyecto Digital",
+    tags: "Qué construir · Cómo escalarlo · Decisiones técnicas sin dolores de cabeza",
   },
 ];
 
