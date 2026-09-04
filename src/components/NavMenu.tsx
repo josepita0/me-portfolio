@@ -12,7 +12,7 @@ import RollingText from "./RollingText";
 const links = [
   { label: "Sobre mí", href: "[data-bio-target]" },
   { label: "Servicios", href: "#services" },
-  { label: "Proyectos", href: "#work" },
+  { label: "Proyectos", href: "#projects" },
   { label: "Contacto", href: "#contact" },
 ];
 
