@@ -49,6 +49,14 @@ const projects = [
     image: "/projects/project_3.webp",
     link: "https://coloratoindustria.com",
   },
+  {
+    name: "Avora",
+    description:
+      "Herramienta de optimización de currículums con inteligencia artificial",
+    tags: "AI · Next.js · Curriculum",
+    image: "/projects/project_4.webp",
+    link: "https://avora.pitass.com",
+  },
 ];
 
 export default function Projects() {
