@@ -208,7 +208,7 @@ export default function HeroStage() {
                 aplicaciones web administrativas, dashboards, y hasta
                 aplicaciones de streaming multiplataforma para Smart TV.
               </p>
-              <ArrowLink href="#work" />
+              <ArrowLink href="#projects" />
             </div>
           </motion.div>
         </div>
@@ -413,7 +413,7 @@ export default function HeroStage() {
                   aplicaciones de streaming multiplataforma para Smart TV.
                 </p>
 
-                <ArrowLink href="#work" />
+                <ArrowLink href="#projects" />
               </div>
             </div>
           </motion.div>
