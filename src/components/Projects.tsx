@@ -38,7 +38,7 @@ const projects = [
   {
     name: "CJ Sport Training",
     description: "Plataforma de reservas para entrenamientos deportivos",
-    tags: "Next.js · PostgreSQL · Booking",
+    tags: "Next.js · PostgreSQL · Reservas",
     image: "/projects/project_2.webp",
     link: "https://cjsporttraining.com",
   },
@@ -56,6 +56,14 @@ const projects = [
     tags: "AI · Next.js · Curriculum",
     image: "/projects/project_4.webp",
     link: "https://avora.pitass.com",
+  },
+  {
+    name: "Zentra",
+    description:
+      "Punto de venta, control de inventario y reportes para negocios varios",
+    tags: "POS · SQLite · Reportes",
+    image: "/projects/project_5.webp",
+    link: "https://zentra.pitass.com",
   },
 ];
 
