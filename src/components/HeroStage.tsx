@@ -192,16 +192,16 @@ export default function HeroStage() {
                 Epa!
               </p>
               <p className="bio-text" aria-labelledby="bio-greeting">
-                Soy José Pita, desarrollador de software, con más de 5 años de
+                Soy José Pita, ingeniero de sistemas, con más de 5 años de
                 experiencia construyendo aplicaciones web escalables y de alto
                 rendimiento.
               </p>
             </div>
             <div className="bio-layer__right bio-text__description">
               <p>
-                Soy ingeniero de sistemas con una sólida base tanto en frontend
-                como en backend. Desarrollo de interfaces modernas y modulares,
-                construyo soluciones completas de extremo a extremo.
+                Cuento con una sólida base tanto en frontend como en backend.
+                Desarrollo de interfaces modernas y modulares, construyo
+                soluciones completas de extremo a extremo.
               </p>
               <p>
                 A lo largo de mi carrera he desarrollado y optimizado
@@ -395,7 +395,7 @@ export default function HeroStage() {
                   Epa!
                 </motion.p>
                 <p className="bio-text" aria-labelledby="bio-greeting">
-                  Soy José Pita, desarrollador de software, con más de 5 años de
+                  Soy José Pita, ingeniero de sistemas, con más de 5 años de
                   experiencia construyendo aplicaciones web escalables y de alto
                   rendimiento.
                 </p>
@@ -403,10 +403,9 @@ export default function HeroStage() {
               <div className="bio-layer__center" aria-hidden="true" />
               <div className="bio-layer__right bio-text__description">
                 <p>
-                  Soy ingeniero de sistemas con una sólida base tanto en
-                  frontend como en backend. Desarrollo de interfaces modernas y
-                  modulares, construyo soluciones completas de extremo a
-                  extremo.
+                  Cuento con una sólida base tanto en frontend como en backend.
+                  Desarrollo de interfaces modernas y modulares, construyo
+                  soluciones completas de extremo a extremo.
                 </p>
                 <p>
                   A lo largo de mi carrera he desarrollado y optimizado
