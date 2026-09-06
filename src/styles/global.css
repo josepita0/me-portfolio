@@ -995,21 +995,17 @@ a {
   letter-spacing: -0.04em;
 }
 
-.projects__view-all {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--ink-50);
-  font:
-    500 0.95rem/1 "Archivo",
-    sans-serif;
-  letter-spacing: -0.02em;
-  text-decoration: none;
-  transition: color 240ms ease;
+.projects__toggle-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(2rem, 4vw, 3rem);
 }
 
-.projects__view-all:hover {
-  color: var(--ink);
+.projects__toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
 }
 
 .projects__grid {
