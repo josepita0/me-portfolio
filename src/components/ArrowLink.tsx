@@ -5,7 +5,7 @@ interface Props {
   children?: string;
 }
 
-export default function ArrowLink({ href, children = "Palante" }: Props) {
+export default function ArrowLink({ href, children = "Pa'lante" }: Props) {
   // Diagonal arrow pointing to the upper-right corner (↗) with a chevron tip.
   const arrowPath = "M6 14L14 6M14 6H9M14 6V11";
 

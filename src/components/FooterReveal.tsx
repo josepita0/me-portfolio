@@ -43,7 +43,7 @@ export default function FooterReveal() {
         <div className="footer__headline">
           <h2>
             Escalando <br />
-            Ideas en
+            Ideas, <br /> Creando
             <br /> Productos.
           </h2>
         </div>
