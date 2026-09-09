@@ -811,7 +811,7 @@ a {
   .hero-mobile-bio .bio-layer__left,
   .hero-mobile-bio .bio-layer__right {
     max-width: none;
-    text-align: left;
+    text-align: justify;
   }
   .hero-mobile-bio .bio-greeting {
     margin: 0 0 24px;
@@ -960,6 +960,9 @@ a {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
+  .services__row p {
+    text-align: justify;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1080,6 +1083,9 @@ a {
   .projects__grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  .projects__card p {
+    text-align: justify;
   }
 }
 
