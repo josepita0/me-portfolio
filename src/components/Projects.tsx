@@ -1,4 +1,9 @@
-import { AnimatePresence, motion, useReducedMotion, type Variants } from "motion/react";
+import {
+  AnimatePresence,
+  motion,
+  useReducedMotion,
+  type Variants,
+} from "motion/react";
 import { useState } from "react";
 
 const EASE: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -67,6 +72,14 @@ const projects = [
     image: "/projects/project_5.webp",
     link: "https://zentra.pitass.com",
   },
+  {
+    name: "Raíces Intervención Social",
+    description:
+      "Sitio web profesional para intervención socioeducativa con adolescentes y familias, y proyectos institucionales para centros educativos.",
+    tags: "Astro · Intervención Social · Landing page",
+    image: "/projects/project_6.webp",
+    link: "https://raicesintervencionsocial.com",
+  },
 ];
 
 // Diagonal arrow SVG path (same as ArrowLink)
@@ -130,7 +143,10 @@ export default function Projects() {
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                     const parent = e.currentTarget.parentElement;
-                    if (parent && !parent.querySelector(".projects__fallback")) {
+                    if (
+                      parent &&
+                      !parent.querySelector(".projects__fallback")
+                    ) {
                       const fallback = document.createElement("div");
                       fallback.className = "projects__fallback";
                       fallback.style.cssText =
